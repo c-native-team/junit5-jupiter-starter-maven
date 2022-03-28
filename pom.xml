@@ -46,25 +46,27 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+				<finalName>executable_app</finalName>
+				<descriptorRefs>
+					<descriptorRef>jar-with-dependencies</descriptorRef>
+				</descriptorRefs>
+				<appendAssemblyId>false</appendAssemblyId>
+				<archive>
+					<manifest>
+					<mainClass>com.example.project.Calculator</mainClass>
+					</manifest>
+				</archive>
+				</configuration>
 				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<archive>
-								<manifest>
-									<mainClass>
-										com.example.project
-									</mainClass>
-								</manifest>
-							</archive>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-						</configuration>
-					</execution>
+				<execution>
+					<id>make-assembly</id>
+					<phase>package</phase>
+					<goals>
+					<goal>single</goal>
+					</goals>
+				</execution>
 				</executions>
 			</plugin>
 		</plugins>
