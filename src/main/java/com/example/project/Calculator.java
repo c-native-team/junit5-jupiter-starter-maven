@@ -18,7 +18,7 @@ public class Calculator {
 	public static void main( String[] args )
 	{
 		while(true){
-			System.out.println("Hello World! Test 2");
+			System.out.println("Hello World! Test Main");
 			try
 			{
 				Thread.sleep(10000);
